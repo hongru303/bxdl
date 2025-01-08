@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: bxdl
+  datasource:
+    url: jdbc:mysql://localhost:3306/bxdl?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8 # 数据库连接URL，替换为你的数据库信息
+    username: root # 数据库用户名
+    password: 123456 # 数据库密码
+    driver-class-name: com.mysql.cj.jdbc.Driver # MySQL 8+ 使用此驱动
+
+
+mybatis-plus:
+  type-aliases-package: com.chris.bxdl.infrastructure.entity # 非常重要！指向你的实体类所在的包
+  configuration:
+    map-underscore-to-camel-case: true # 可选，开启驼峰命名转换
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 可选，输出SQL日志到控制台，生产环境不建议使用
