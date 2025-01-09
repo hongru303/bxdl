@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("easy")
+@CrossOrigin
 public class EasyController {
 
     @Autowired
@@ -23,8 +24,8 @@ public class EasyController {
     }
 
 
-    @GetMapping("save/{path}")
-    public String saveFileData(@PathVariable String path){
+    @GetMapping("save")
+    public String saveFileData(@RequestParam String path){
         return iFileLinkService.saveFileUrl(path);
     }
 

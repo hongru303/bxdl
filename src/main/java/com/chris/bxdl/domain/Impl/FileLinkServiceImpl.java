@@ -18,12 +18,14 @@ public class FileLinkServiceImpl implements IFileLinkService {
 
     @Override
     public String getFileUrl(String token) {
+        log.info("g");
         FileLink fileLink = fileLinkMapper.selectByPath(token);
         return fileLink.getPath();
     }
 
     @Override
     public String saveFileUrl(String path) {
+        log.info("s");
         FileLink fileLink = new FileLink();
         fileLink.setPath(path);
         String token = UUID.randomUUID().toString().substring(0, 6);
